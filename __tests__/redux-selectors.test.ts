@@ -15,7 +15,7 @@ describe('REDUX SELECTORS', () => {
       const actual = filterArticlesBySelectedTags.resultFunc(mockedArticles, [
         ''
       ]);
-      const expected = [];
+      const expected = mockedArticles;
       expect(actual).toEqual(expected);
     });
   });

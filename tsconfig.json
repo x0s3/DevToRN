@@ -22,7 +22,8 @@
       "@components/*": ["src/components/*"],
       "@hooks/*": ["src/hooks/*"],
       "@utils/*": ["src/utils/*"],
-      "@redux/*": ["src/redux/*"]
+      "@redux/*": ["src/redux/*"],
+      "@navigation/*": ["src/navigation/*"]
     },
     "resolveJsonModule": true,
     "rootDir": "src",

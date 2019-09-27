@@ -1,5 +1,10 @@
 import { Article } from '@interfaces/';
-import { createAsyncAction } from 'typesafe-actions';
+import { createAsyncAction, createAction } from 'typesafe-actions';
+
+export const updateTagList = createAction(
+  'PUBLISHED_ARTICLES_UPDATE_TAG_LIST',
+  action => (tag: string) => action(tag)
+);
 
 export const fetchPublishedArticles = createAsyncAction(
   'PUBLISHED_ARTICLES_REQUEST',

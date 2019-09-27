@@ -1,17 +1,10 @@
-import { applyMiddleware, createStore, Store } from 'redux';
+import { applyMiddleware, compose, createStore, Store } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
-import { composeWithDevTools } from 'remote-redux-devtools';
 import { Services } from 'ServiceTypes';
 import { RootAction, RootState } from 'typesafe-actions';
 import rootEpic from './epics';
 import { rootReducer } from './reducers';
 import services from './services';
-
-const composeEnhancers = composeWithDevTools({
-  name: 'devtorn',
-  realtime: true,
-  port: 8000
-});
 
 export function configureStore(): Store {
   const epicMiddleware = createEpicMiddleware<
@@ -27,7 +20,7 @@ export function configureStore(): Store {
 
   const store = createStore(
     rootReducer,
-    composeEnhancers(applyMiddleware(...middlewares))
+    compose(applyMiddleware(...middlewares))
   );
 
   epicMiddleware.run(rootEpic);

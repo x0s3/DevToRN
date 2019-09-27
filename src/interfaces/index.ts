@@ -20,7 +20,7 @@ export interface Article {
   id: number;
   title: string;
   description: string;
-  cover_image: string;
+  cover_image?: string;
   published_at: string;
   tag_list: string[];
   slug: string;

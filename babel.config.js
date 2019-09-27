@@ -9,7 +9,8 @@ module.exports = {
           '@interfaces': './src/interfaces/index',
           '@hooks': './src/hooks',
           '@utils': './src/utils',
-          '@redux': './src/redux'
+          '@redux': './src/redux',
+          '@navigation': './src/navigation'
         }
       }
     ]

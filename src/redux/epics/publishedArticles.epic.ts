@@ -7,15 +7,14 @@ import { fetchPublishedArticles } from '../actions/publishedArticles.actions';
 const fetchPublishedArticles$: RootEpic = (
   action$,
   store$,
-  { ajax, options: { mainURL, headers } }
+  { ajax, options: { mainURL } }
 ) =>
   action$.pipe(
     filter(isActionOf(fetchPublishedArticles.request)),
     switchMap(_ =>
       from(
         ajax.getJSON<Article[]>(
-          `${mainURL}/articles?page=${store$.value.publishedArticles.page}`,
-          { ...headers }
+          `${mainURL}/articles?page=${store$.value.publishedArticles.page}`
         )
       ).pipe(
         map(fetchPublishedArticles.success),

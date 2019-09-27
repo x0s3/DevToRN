@@ -21,7 +21,7 @@ export async function homeStack(): Promise<void> {
         id: BOTTOM_TABS_SCREEN,
         options: {
           bottomTabs: {
-            backgroundColor: '#151A30'
+            backgroundColor: '#1B2E63'
           },
           topBar: {
             visible: true
@@ -37,7 +37,9 @@ export async function homeStack(): Promise<void> {
                     options: {
                       topBar: {
                         testID: require('./testIDs').FORUM_HEADER_TEST,
-                        title: { text: 'FORUM' },
+                        title: {
+                          text: 'Forum'
+                        },
                         rightButtons: [
                           {
                             color: '#F7F9FC',
@@ -69,7 +71,7 @@ export async function homeStack(): Promise<void> {
                     options: {
                       topBar: {
                         testID: require('./testIDs').YOUR_ACCOUNT_HEADER_TEST,
-                        title: { text: 'YOUR ACCOUNT' }
+                        title: { text: 'Account' }
                       }
                     }
                   }
@@ -92,7 +94,7 @@ export async function homeStack(): Promise<void> {
                     options: {
                       topBar: {
                         testID: require('./testIDs').OPTIONS_HEADER_TEST,
-                        title: { text: 'OPTIONS' }
+                        title: { text: 'Options' }
                       }
                     }
                   }
@@ -125,8 +127,9 @@ export function initialStack(): void {
       selectedIconColor: '#42AAFF'
     },
     topBar: {
-      background: { color: '#1A2138' },
+      background: { color: '#1B2E63' },
       title: {
+        fontSize: 30,
         alignment: 'center',
         fontFamily: 'opensans-bold',
         color: '#F7F9FC'

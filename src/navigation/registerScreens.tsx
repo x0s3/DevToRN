@@ -13,7 +13,7 @@ const store = configureStore();
 export function registerScreens(): void {
   Navigation.registerComponentWithRedux(
     FORUM_SCREEN,
-    () => require('../App').default,
+    () => require('../screens/Forum/Forum').default,
     CustomProvider,
     store
   );

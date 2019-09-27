@@ -17,20 +17,16 @@ describe('MAIN SCREEN BOTTOM NAVIGATION', () => {
     await device.reloadReactNative();
   });
 
-  it('should show STEP ONE text correctly', async () => {
-    await expect(element(by.id('stepOne'))).toBeVisible();
-  });
-
   it('should have visible FORUM and SEARCH ICON on tab FORUM', async () => {
     await expect(elementById(FORUM_HEADER_TEST)).toBeVisible();
     await expect(elementById(SEARCH_FILTERS_ICON_TEST)).toExist();
-    await expect(elementByLabel('FORUM')).toBeVisible();
+    await expect(elementByLabel('Forum')).toBeVisible();
   });
 
   it('should tap on YOUR ACCOUNT tab from tab FORUM', async () => {
     await expect(elementById(FORUM_HEADER_TEST)).toBeVisible();
     await expect(elementById(SEARCH_FILTERS_ICON_TEST)).toExist();
-    await expect(elementByLabel('FORUM')).toBeVisible();
+    await expect(elementByLabel('Forum')).toBeVisible();
 
     await elementById(YOUR_ACCOUNT_BOTTOM_TEST).tap();
 
@@ -38,13 +34,13 @@ describe('MAIN SCREEN BOTTOM NAVIGATION', () => {
     await expect(elementById(SEARCH_FILTERS_ICON_TEST)).toNotExist();
 
     await expect(elementById(YOUR_ACCOUNT_HEADER_TEST)).toBeVisible();
-    await expect(elementByLabel('YOUR ACCOUNT')).toBeVisible();
+    await expect(elementByLabel('Account')).toBeVisible();
   });
 
   it('should tap on OPTIONS tab from tab FORUM', async () => {
     await expect(elementById(FORUM_HEADER_TEST)).toBeVisible();
     await expect(elementById(SEARCH_FILTERS_ICON_TEST)).toExist();
-    await expect(elementByLabel('FORUM')).toBeVisible();
+    await expect(elementByLabel('Forum')).toBeVisible();
 
     await elementById(OPTIONS_BOTTOM_TEST).tap();
 
@@ -52,13 +48,13 @@ describe('MAIN SCREEN BOTTOM NAVIGATION', () => {
     await expect(elementById(SEARCH_FILTERS_ICON_TEST)).toNotExist();
 
     await expect(elementById(OPTIONS_HEADER_TEST)).toBeVisible();
-    await expect(elementByLabel('OPTIONS')).toBeVisible();
+    await expect(elementByLabel('Options')).toBeVisible();
   });
 
   it('should tap on OPTIONS tab from tab FORUM and tap again to FORUM', async () => {
     await expect(elementById(FORUM_HEADER_TEST)).toBeVisible();
     await expect(elementById(SEARCH_FILTERS_ICON_TEST)).toExist();
-    await expect(elementByLabel('FORUM')).toBeVisible();
+    await expect(elementByLabel('Forum')).toBeVisible();
 
     await elementById(OPTIONS_BOTTOM_TEST).tap();
 
@@ -66,12 +62,12 @@ describe('MAIN SCREEN BOTTOM NAVIGATION', () => {
     await expect(elementById(SEARCH_FILTERS_ICON_TEST)).toNotExist();
 
     await expect(elementById(OPTIONS_HEADER_TEST)).toBeVisible();
-    await expect(elementByLabel('OPTIONS')).toBeVisible();
+    await expect(elementByLabel('Options')).toBeVisible();
 
     await elementById(FORUM_BOTTOM_TEST).tap();
 
     await expect(elementById(FORUM_HEADER_TEST)).toBeVisible();
     await expect(elementById(SEARCH_FILTERS_ICON_TEST)).toExist();
-    await expect(elementByLabel('FORUM')).toBeVisible();
+    await expect(elementByLabel('Forum')).toBeVisible();
   });
 });

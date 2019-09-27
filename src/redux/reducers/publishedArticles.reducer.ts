@@ -1,11 +1,14 @@
 import { Article } from '@interfaces/';
 import { createReducer, RootAction } from 'typesafe-actions';
-import { fetchPublishedArticles } from '../actions/publishedArticles.actions';
+import {
+  fetchPublishedArticles,
+  updateTagList
+} from '../actions/publishedArticles.actions';
 
 interface State {
   articles: Article[];
   page: number;
-  selected_tags?: string[];
+  selected_tags: string[];
   fetching: boolean;
   error?: any;
 }
@@ -36,4 +39,17 @@ export const publishedArticlesReducer = createReducer<State, RootAction>({
     ...state,
     fetching: false,
     error: false
-  }));
+  }))
+  .handleAction(updateTagList, (state, { payload: payloadTag }) => {
+    if (state.selected_tags.indexOf(payloadTag) > -1) {
+      return {
+        ...state,
+        selected_tags: state.selected_tags.filter(tag => tag !== payloadTag)
+      };
+    }
+
+    return {
+      ...state,
+      selected_tags: [...state.selected_tags, payloadTag]
+    };
+  });

@@ -12,8 +12,10 @@ export const getSelectedTags = (state: RootState) =>
 
 export const filterArticlesBySelectedTags = createSelector(
   [getPublishedArticles, getSelectedTags],
-  (articles, tags) =>
-    articles.filter(
+  (articles, tags) => {
+    const filteredArticles = articles.filter(
       article => article.tag_list.filter(tag => tags.includes(tag)).length > 0
-    )
+    );
+    return filteredArticles.length > 0 ? filteredArticles : articles;
+  }
 );
