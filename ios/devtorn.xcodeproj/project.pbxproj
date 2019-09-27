@@ -19,6 +19,17 @@
 		2DCD954D1E0B4F2C00145EB5 /* devtornTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* devtornTests.m */; };
 		75F2CC980CF4EDB1821B3D83 /* libPods-devtorn.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AAF1606CCEF4C820AEA0B64 /* libPods-devtorn.a */; };
 		800FA81503CB3C62618F9C57 /* libPods-devtorn-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 069CD4ADA60A6DC71DB03616 /* libPods-devtorn-tvOSTests.a */; };
+		8D45F6FD233D698D00C503C4 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D45F6FC233D698D00C503C4 /* MaterialIcons.ttf */; };
+		8D45F709233D69AF00C503C4 /* opensans-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D45F6FF233D69AE00C503C4 /* opensans-italic.ttf */; };
+		8D45F70A233D69AF00C503C4 /* opensans-extra-bold-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D45F700233D69AE00C503C4 /* opensans-extra-bold-italic.ttf */; };
+		8D45F70B233D69AF00C503C4 /* opensans-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D45F701233D69AE00C503C4 /* opensans-bold.ttf */; };
+		8D45F70C233D69AF00C503C4 /* opensans-extra-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D45F702233D69AE00C503C4 /* opensans-extra-bold.ttf */; };
+		8D45F70D233D69AF00C503C4 /* opensans-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D45F703233D69AE00C503C4 /* opensans-light.ttf */; };
+		8D45F70E233D69AF00C503C4 /* opensans-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D45F704233D69AF00C503C4 /* opensans-regular.ttf */; };
+		8D45F70F233D69AF00C503C4 /* opensans-semibold-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D45F705233D69AF00C503C4 /* opensans-semibold-italic.ttf */; };
+		8D45F710233D69AF00C503C4 /* opensans-bold-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D45F706233D69AF00C503C4 /* opensans-bold-italic.ttf */; };
+		8D45F711233D69AF00C503C4 /* opensans-lignt-italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D45F707233D69AF00C503C4 /* opensans-lignt-italic.ttf */; };
+		8D45F712233D69AF00C503C4 /* opensans-semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D45F708233D69AF00C503C4 /* opensans-semibold.ttf */; };
 		B2AD03609D91A618A78B483F /* libPods-devtorn-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 306670D2DB25E15125375F3C /* libPods-devtorn-tvOS.a */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +72,17 @@
 		5AAF1606CCEF4C820AEA0B64 /* libPods-devtorn.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-devtorn.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5FB4C7D64ECEC70BD003C363 /* Pods-devtorn.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devtorn.release.xcconfig"; path = "Target Support Files/Pods-devtorn/Pods-devtorn.release.xcconfig"; sourceTree = "<group>"; };
 		7B20F36175B1EDEB9ED2D9EE /* Pods-devtorn-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devtorn-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-devtorn-tvOSTests/Pods-devtorn-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D45F6FC233D698D00C503C4 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = MaterialIcons.ttf; path = "../../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		8D45F6FF233D69AE00C503C4 /* opensans-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-italic.ttf"; sourceTree = "<group>"; };
+		8D45F700233D69AE00C503C4 /* opensans-extra-bold-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-extra-bold-italic.ttf"; sourceTree = "<group>"; };
+		8D45F701233D69AE00C503C4 /* opensans-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-bold.ttf"; sourceTree = "<group>"; };
+		8D45F702233D69AE00C503C4 /* opensans-extra-bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-extra-bold.ttf"; sourceTree = "<group>"; };
+		8D45F703233D69AE00C503C4 /* opensans-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-light.ttf"; sourceTree = "<group>"; };
+		8D45F704233D69AF00C503C4 /* opensans-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-regular.ttf"; sourceTree = "<group>"; };
+		8D45F705233D69AF00C503C4 /* opensans-semibold-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-semibold-italic.ttf"; sourceTree = "<group>"; };
+		8D45F706233D69AF00C503C4 /* opensans-bold-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-bold-italic.ttf"; sourceTree = "<group>"; };
+		8D45F707233D69AF00C503C4 /* opensans-lignt-italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-lignt-italic.ttf"; sourceTree = "<group>"; };
+		8D45F708233D69AF00C503C4 /* opensans-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "opensans-semibold.ttf"; sourceTree = "<group>"; };
 		96D3A689A63EAF667E34532F /* Pods-devtornTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devtornTests.debug.xcconfig"; path = "Target Support Files/Pods-devtornTests/Pods-devtornTests.debug.xcconfig"; sourceTree = "<group>"; };
 		BFA1DB01084A1EB589E3E883 /* Pods-devtorn-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devtorn-tvOS.release.xcconfig"; path = "Target Support Files/Pods-devtorn-tvOS/Pods-devtorn-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
@@ -161,7 +183,6 @@
 				96D3A689A63EAF667E34532F /* Pods-devtornTests.debug.xcconfig */,
 				34CDBD3BB5A4DBF02B584955 /* Pods-devtornTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -175,6 +196,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8D45F6FE233D699300C503C4 /* Resources */,
+				8D45F6FB233D695700C503C4 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* devtorn */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* devtornTests */,
@@ -196,6 +219,31 @@
 				2D02E4901E0B4A5D006451C7 /* devtorn-tvOSTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8D45F6FB233D695700C503C4 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8D45F6FC233D698D00C503C4 /* MaterialIcons.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		8D45F6FE233D699300C503C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8D45F706233D69AF00C503C4 /* opensans-bold-italic.ttf */,
+				8D45F701233D69AE00C503C4 /* opensans-bold.ttf */,
+				8D45F700233D69AE00C503C4 /* opensans-extra-bold-italic.ttf */,
+				8D45F702233D69AE00C503C4 /* opensans-extra-bold.ttf */,
+				8D45F6FF233D69AE00C503C4 /* opensans-italic.ttf */,
+				8D45F703233D69AE00C503C4 /* opensans-light.ttf */,
+				8D45F707233D69AF00C503C4 /* opensans-lignt-italic.ttf */,
+				8D45F704233D69AF00C503C4 /* opensans-regular.ttf */,
+				8D45F705233D69AF00C503C4 /* opensans-semibold-italic.ttf */,
+				8D45F708233D69AF00C503C4 /* opensans-semibold.ttf */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -309,6 +357,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -337,8 +386,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D45F70F233D69AF00C503C4 /* opensans-semibold-italic.ttf in Resources */,
+				8D45F712233D69AF00C503C4 /* opensans-semibold.ttf in Resources */,
+				8D45F70B233D69AF00C503C4 /* opensans-bold.ttf in Resources */,
+				8D45F711233D69AF00C503C4 /* opensans-lignt-italic.ttf in Resources */,
+				8D45F70E233D69AF00C503C4 /* opensans-regular.ttf in Resources */,
+				8D45F710233D69AF00C503C4 /* opensans-bold-italic.ttf in Resources */,
+				8D45F70A233D69AF00C503C4 /* opensans-extra-bold-italic.ttf in Resources */,
+				8D45F70D233D69AF00C503C4 /* opensans-light.ttf in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				8D45F70C233D69AF00C503C4 /* opensans-extra-bold.ttf in Resources */,
+				8D45F709233D69AF00C503C4 /* opensans-italic.ttf in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				8D45F6FD233D698D00C503C4 /* MaterialIcons.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

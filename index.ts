@@ -1,9 +1,10 @@
-/**
- * @format
- */
+import { Navigation } from 'react-native-navigation';
+import { YellowBox } from 'react-native';
+import { initialStack, registerScreens } from './src/navigation';
 
-import { AppRegistry } from 'react-native';
-import { name as appName } from './app.json';
-import App from './src/App';
+YellowBox.ignoreWarnings(['Require cycle: node_modules/react-native-paper']);
 
-AppRegistry.registerComponent(appName, () => App);
+Navigation.events().registerAppLaunchedListener(() => {
+  registerScreens();
+  initialStack();
+});

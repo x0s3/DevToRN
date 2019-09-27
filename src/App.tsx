@@ -26,14 +26,11 @@ const App = () => {
           style={styles.scrollView}
         >
           <Header />
-          {global.HermesInternal == null ? null : (
-            <View style={styles.engine}>
-              <Text style={styles.footer}>Engine: Heerms</Text>
-            </View>
-          )}
           <View style={styles.body}>
             <View style={styles.sectionContainer}>
-              <Text testID={'stepOne'} style={styles.sectionTitle}>Step One</Text>
+              <Text testID={'stepOne'} style={styles.sectionTitle}>
+                Step One
+              </Text>
               <Text style={styles.sectionDescription}>
                 Edit <Text style={styles.highlight}>App.tsx</Text> to change
                 this screen and then come back to see your edits.

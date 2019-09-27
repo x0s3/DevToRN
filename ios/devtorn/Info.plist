@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>devtorn</string>
+	<string>DEV.TO</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
@@ -39,6 +39,20 @@
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MaterialIcons.ttf</string>
+		<string>opensans-bold-italic.ttf</string>
+		<string>opensans-bold.ttf</string>
+		<string>opensans-extra-bold-italic.ttf</string>
+		<string>opensans-extra-bold.ttf</string>
+		<string>opensans-italic.ttf</string>
+		<string>opensans-light.ttf</string>
+		<string>opensans-light-italic.ttf</string>
+		<string>opensans-regular.ttf</string>
+		<string>opensans-semibold-bold-italic.ttf</string>
+		<string>opensans-semibold.ttf</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>

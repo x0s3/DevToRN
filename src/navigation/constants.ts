@@ -1,0 +1,9 @@
+export const ARTICLE_SCREEN = 'ARTICLE_SCREEN';
+
+export const BOTTOM_TABS_SCREEN = 'BOTTOM_TABS_SCREEN';
+
+export const FORUM_SCREEN = 'FORUM_SCREEN';
+
+export const OPTIONS_SCREEN = 'OPTIONS_SCREEN';
+
+export const PROFILE_SCREEN = 'PROFILE_SCREEN';
