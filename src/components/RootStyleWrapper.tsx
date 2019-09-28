@@ -1,5 +1,4 @@
 import React from 'react';
-import { SafeAreaView } from 'react-native';
 import Icons from 'react-native-vector-icons/MaterialIcons';
 import {
   Provider as PaperProvider,
@@ -42,7 +41,7 @@ export const RootStyleWrapper: React.ElementType = ({ children }) => {
         icon: props => <Icons {...props} />
       }}
     >
-      <SafeAreaView style={{ flex: 1 }}>{children}</SafeAreaView>
+      {children}
     </PaperProvider>
   );
 };

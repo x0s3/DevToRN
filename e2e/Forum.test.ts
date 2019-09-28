@@ -1,12 +1,15 @@
 import { expect } from 'detox';
 import {
+  ARTICLE_TOP_BAR_TEST,
+  BOTTOM_TABS_TEST,
+  SHARE_ARTICLE_BUTTON_TEST,
   FLATLIST_FILTERS_TEST,
   FLATLIST_PUB_ARTICLES_TEST,
   FORUM_BOTTOM_TEST
 } from '../src/navigation/testIDs';
 import actions from './Utils';
 
-const { elementById, sleep } = actions;
+const { elementById, elementByLabel, sleep } = actions;
 
 describe('FORUM SCREEN', () => {
   it('should render filter lists correctly', async () => {
@@ -30,5 +33,31 @@ describe('FORUM SCREEN', () => {
 
   it('should tap filter item correctly', async () => {
     await elementById('javascript').tap();
+
+    await sleep(500);
+
+    await elementById('javascript').tap();
+  });
+
+  it('should tap article and open article screen correctly', async () => {
+    const postId = 'article-0';
+
+    await sleep(500);
+
+    await elementById(postId).tap();
+
+    await sleep(1000);
+
+    await expect(elementById('articleFetching')).toNotExist();
+    await expect(elementById('articleRootView')).toExist();
+    await expect(elementById('articleRootView')).toBeVisible();
+
+    await expect(elementById(BOTTOM_TABS_TEST)).toBeNotVisible();
+    await expect(elementById(FLATLIST_PUB_ARTICLES_TEST)).toBeNotVisible();
+
+    await expect(elementById(SHARE_ARTICLE_BUTTON_TEST)).toBeVisible();
+
+    await expect(elementById(ARTICLE_TOP_BAR_TEST)).toBeVisible();
+    await expect(elementByLabel('Article')).toBeVisible();
   });
 });

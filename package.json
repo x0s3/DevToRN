@@ -52,9 +52,11 @@
     "@types/react-native-vector-icons": "^6.4.2",
     "@types/react-redux": "^7.1.3",
     "@types/react-test-renderer": "^16.9.0",
+    "@types/redux-logger": "^3.0.7",
     "@typescript-eslint/eslint-plugin": "^2.3.1",
     "babel-jest": "^24.9.0",
     "babel-plugin-module-resolver": "^3.2.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "detox": "^14.3.4",
     "eslint": "^6.4.0",
     "eslint-config-airbnb-typescript": "^5.0.0",
@@ -65,16 +67,23 @@
     "husky": "^3.0.5",
     "jest": "^24.9.0",
     "jest-circus": "^24.9.0",
+    "jest-coverage-badges": "^1.1.2",
     "metro-minify-terser": "^0.56.0",
     "metro-react-native-babel-preset": "^0.56.0",
     "pretty-quick": "^1.11.1",
     "react-devtools": "^4.1.1",
     "react-native-testing-library": "^1.11.1",
     "react-test-renderer": "16.9.0",
+    "redux-logger": "^3.0.6",
     "typescript": "^3.6.3"
   },
   "jest": {
     "preset": "react-native",
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ],
     "moduleNameMapper": {
       "@interfaces/(.*)": "<rootDir>/src/interfaces/index",
       "@components/(.*)": "<rootDir>/src/components/$1",

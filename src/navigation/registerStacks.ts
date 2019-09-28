@@ -21,7 +21,8 @@ export async function homeStack(): Promise<void> {
         id: BOTTOM_TABS_SCREEN,
         options: {
           bottomTabs: {
-            backgroundColor: '#1B2E63'
+            backgroundColor: '#1B2E63',
+            testID: require('./testIDs').BOTTOM_TABS_TEST
           },
           topBar: {
             visible: true

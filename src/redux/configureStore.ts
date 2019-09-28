@@ -18,6 +18,12 @@ export function configureStore(): Store {
 
   const middlewares = [epicMiddleware];
 
+  if (process.env.NODE_ENV === 'development') {
+    const { logger } = require(`redux-logger`);
+
+    middlewares.push(logger);
+  }
+
   const store = createStore(
     rootReducer,
     compose(applyMiddleware(...middlewares))

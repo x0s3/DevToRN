@@ -18,6 +18,12 @@ export function registerScreens(): void {
     store
   );
   Navigation.registerComponentWithRedux(
+    ARTICLE_SCREEN,
+    () => require('../screens/Article/Article').default,
+    CustomProvider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
     PROFILE_SCREEN,
     () => require('../App').default,
     CustomProvider,
@@ -25,12 +31,6 @@ export function registerScreens(): void {
   );
   Navigation.registerComponentWithRedux(
     OPTIONS_SCREEN,
-    () => require('../App').default,
-    CustomProvider,
-    store
-  );
-  Navigation.registerComponentWithRedux(
-    ARTICLE_SCREEN,
     () => require('../App').default,
     CustomProvider,
     store

@@ -61,3 +61,6 @@ buck-out/
 
 # Project
 secrets.ts
+lcov-report/
+lcov.*
+coverage-summary.json

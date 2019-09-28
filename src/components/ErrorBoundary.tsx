@@ -20,7 +20,11 @@ export default class ErrorBoundary extends Component<
 
   render() {
     if (this.state.hasError) {
-      return <Text>Ups seems like something went wrong... :(</Text>;
+      return (
+        <Text testID={'errorBoundaryText'}>
+          Ups seems like something went wrong... :(
+        </Text>
+      );
     }
 
     return this.props.children;

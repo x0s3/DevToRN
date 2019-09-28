@@ -35,14 +35,50 @@ describe('REDUX ACTIONS', () => {
         actions.publishedArticlesActions.fetchPublishedArticles.failure()
       ).toEqual(expectedAction);
     });
+  });
 
-    it('should create cancel published articles action successfully', () => {
+  describe('PUBLISHED ARTICLE ACTIONS', () => {
+    it('should create request published article action successfully', () => {
       const expectedAction = {
-        type: 'PUBLISHED_ARTICLES_CANCEL'
+        type: 'PUBLISHED_ARTICLE_REQUEST',
+        payload: 1
       };
 
       expect(
-        actions.publishedArticlesActions.fetchPublishedArticles.cancel()
+        actions.publishedArticlesActions.fetchPublishedArticle.request(1)
+      ).toEqual(expectedAction);
+    });
+
+    it('should create success published article action successfully', () => {
+      const expectedAction = {
+        type: 'PUBLISHED_ARTICLE_SUCCESS',
+        payload: mockedArticles[0]
+      };
+
+      expect(
+        actions.publishedArticlesActions.fetchPublishedArticle.success(
+          mockedArticles[0]
+        )
+      ).toEqual(expectedAction);
+    });
+
+    it('should create error published article action successfully', () => {
+      const expectedAction = {
+        type: 'PUBLISHED_ARTICLE_ERROR'
+      };
+
+      expect(
+        actions.publishedArticlesActions.fetchPublishedArticle.failure()
+      ).toEqual(expectedAction);
+    });
+
+    it('should create cancel published article action successfully', () => {
+      const expectedAction = {
+        type: 'PUBLISHED_ARTICLE_CANCEL'
+      };
+
+      expect(
+        actions.publishedArticlesActions.fetchPublishedArticle.cancel()
       ).toEqual(expectedAction);
     });
   });

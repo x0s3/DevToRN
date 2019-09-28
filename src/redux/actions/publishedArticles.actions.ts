@@ -9,6 +9,12 @@ export const updateTagList = createAction(
 export const fetchPublishedArticles = createAsyncAction(
   'PUBLISHED_ARTICLES_REQUEST',
   'PUBLISHED_ARTICLES_SUCCESS',
-  'PUBLISHED_ARTICLES_ERROR',
-  'PUBLISHED_ARTICLES_CANCEL'
-)<undefined, Article[], undefined, undefined>();
+  'PUBLISHED_ARTICLES_ERROR'
+)<undefined, Article[], undefined>();
+
+export const fetchPublishedArticle = createAsyncAction(
+  'PUBLISHED_ARTICLE_REQUEST',
+  'PUBLISHED_ARTICLE_SUCCESS',
+  'PUBLISHED_ARTICLE_ERROR',
+  'PUBLISHED_ARTICLE_CANCEL'
+)<number, Article, undefined, undefined>();

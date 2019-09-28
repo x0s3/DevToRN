@@ -1,3 +1,4 @@
+import { Article } from '@interfaces/';
 import { RootState } from 'typesafe-actions';
 import { createSelector } from 'reselect';
 
@@ -5,7 +6,10 @@ export const getPublishedArticles = (state: RootState) =>
   state.publishedArticles.articles;
 
 export const isFetchingArticles = (state: RootState) =>
-  state.publishedArticles.fetching;
+  state.publishedArticles.fetchingArticles;
+
+export const hasErrorArticles = (state: RootState) =>
+  state.publishedArticles.errorArticles || false;
 
 export const getSelectedTags = (state: RootState) =>
   state.publishedArticles.selected_tags || [];
@@ -19,3 +23,12 @@ export const filterArticlesBySelectedTags = createSelector(
     return filteredArticles.length > 0 ? filteredArticles : articles;
   }
 );
+
+export const isFetchingArticle = (state: RootState) =>
+  state.publishedArticles.fetchingArticle;
+
+export const getPublishedArticle = (state: RootState) =>
+  state.publishedArticles.fetchedArticle as Article;
+
+export const hasErrorArticle = (state: RootState) =>
+  state.publishedArticles.errorArticle || false;

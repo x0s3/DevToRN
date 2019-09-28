@@ -7,15 +7,24 @@ import {
   Title
 } from 'react-native-paper';
 
-export const Card = React.memo<Article & { testID: number }>(
+interface CardProps extends Article {
+  testID: number;
+  onPress: (id: number) => void;
+  onLongPress?: () => void;
+}
+
+export const Card = React.memo<CardProps>(
   ({
+    onPress,
     testID,
     title,
     cover_image,
     tag_list,
+    id,
     user: { name, profile_image_90 }
   }) => (
     <PaperCard
+      onPress={() => onPress(id)}
       testID={`article-${testID}`}
       style={{ backgroundColor: '#141F2D', margin: 5 }}
     >

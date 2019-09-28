@@ -17,13 +17,14 @@ export const Chip = React.memo<ChipProps>(({ text, action, style = {} }) => {
 
   return (
     <PaperChip
+      textStyle={{ fontWeight: 'bold' }}
       icon={''}
       style={style}
       testID={text}
       selected={selected}
       onPress={onPressChipAction}
     >
-      {text}
+      {`#${text}`}
     </PaperChip>
   );
 });

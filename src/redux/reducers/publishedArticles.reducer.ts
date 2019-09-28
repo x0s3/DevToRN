@@ -2,43 +2,71 @@ import { Article } from '@interfaces/';
 import { createReducer, RootAction } from 'typesafe-actions';
 import {
   fetchPublishedArticles,
+  fetchPublishedArticle,
   updateTagList
 } from '../actions/publishedArticles.actions';
 
 interface State {
   articles: Article[];
+  fetchedArticle?: Article;
   page: number;
   selected_tags: string[];
-  fetching: boolean;
-  error?: any;
+  fetchingArticles: boolean;
+  fetchingArticle: boolean;
+  errorArticles?: any;
+  errorArticle?: any;
 }
 
 export const publishedArticlesReducer = createReducer<State, RootAction>({
   page: 1,
   articles: [],
   selected_tags: [],
-  fetching: false
+  fetchingArticles: false,
+  fetchingArticle: false
 })
-  .handleAction(fetchPublishedArticles.request, state => ({
-    ...state,
-    fetching: true
-  }))
+  .handleAction(
+    [fetchPublishedArticles.request, fetchPublishedArticle.request],
+    (state, action) => ({
+      ...state,
+      ...(action.type.includes('_ARTICLES_')
+        ? {
+            fetchingArticles: true
+          }
+        : { fetchingArticle: true })
+    })
+  )
   .handleAction(fetchPublishedArticles.success, (state, { payload }) => ({
     ...state,
     articles: [...state.articles, ...payload],
-    fetching: false,
-    error: false,
+    fetchingArticles: false,
     page: state.page + 1
   }))
-  .handleAction(fetchPublishedArticles.failure, state => ({
+  .handleAction(
+    fetchPublishedArticle.success,
+    (state, { payload: article }) => ({
+      ...state,
+      fetchedArticle: article,
+      fetchingArticle: false
+    })
+  )
+  .handleAction(
+    [fetchPublishedArticles.failure, fetchPublishedArticle.failure],
+    (state, action) => ({
+      ...state,
+      ...(action.type.includes('_ARTICLES_')
+        ? {
+            fetchingArticles: false,
+            errorArticles: true
+          }
+        : {
+            fetchingArticle: false,
+            errorArticle: true
+          })
+    })
+  )
+  .handleAction(fetchPublishedArticle.cancel, state => ({
     ...state,
-    fetching: false,
-    error: true
-  }))
-  .handleAction(fetchPublishedArticles.cancel, state => ({
-    ...state,
-    fetching: false,
-    error: false
+    fetchingArticle: false
   }))
   .handleAction(updateTagList, (state, { payload: payloadTag }) => {
     if (state.selected_tags.indexOf(payloadTag) > -1) {
