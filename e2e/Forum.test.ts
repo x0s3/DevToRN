@@ -1,4 +1,4 @@
-import { expect } from 'detox';
+import { expect, device } from 'detox';
 import {
   ARTICLE_TOP_BAR_TEST,
   BOTTOM_TABS_TEST,
@@ -9,7 +9,7 @@ import {
 } from '../src/navigation/testIDs';
 import actions from './Utils';
 
-const { elementById, elementByLabel, sleep } = actions;
+const { elementById, elementByLabel, sleep, tapBackIos } = actions;
 
 describe('FORUM SCREEN', () => {
   it('should render filter lists correctly', async () => {
@@ -32,11 +32,11 @@ describe('FORUM SCREEN', () => {
   });
 
   it('should tap filter item correctly', async () => {
-    await elementById('javascript').tap();
+    await elementById('typescript').tap();
 
     await sleep(500);
 
-    await elementById('javascript').tap();
+    await elementById('typescript').tap();
   });
 
   it('should tap article and open article screen correctly', async () => {
@@ -59,5 +59,25 @@ describe('FORUM SCREEN', () => {
 
     await expect(elementById(ARTICLE_TOP_BAR_TEST)).toBeVisible();
     await expect(elementByLabel('Article')).toBeVisible();
+  });
+
+  it('should tap back to forum view from article view', async () => {
+    const postId = 'article-0';
+
+    await expect(elementById(BOTTOM_TABS_TEST)).toBeNotVisible();
+    await expect(elementById(FLATLIST_PUB_ARTICLES_TEST)).toBeNotVisible();
+
+    await expect(elementById(ARTICLE_TOP_BAR_TEST)).toBeVisible();
+    await expect(elementByLabel('Article')).toBeVisible();
+
+    if (device.getPlatform() === 'android') {
+      await device.pressBack();
+    } else {
+      await tapBackIos();
+    }
+
+    await expect(elementById(postId)).toBeVisible();
+    await expect(elementById(BOTTOM_TABS_TEST)).toBeVisible();
+    await expect(elementById(FLATLIST_PUB_ARTICLES_TEST)).toBeVisible();
   });
 });

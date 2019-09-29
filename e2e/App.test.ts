@@ -1,4 +1,4 @@
-import { by, device, element, expect } from 'detox';
+import { expect } from 'detox';
 import {
   FORUM_BOTTOM_TEST,
   FORUM_HEADER_TEST,
@@ -14,7 +14,7 @@ const { elementByLabel, elementById } = actions;
 
 describe('MAIN SCREEN BOTTOM NAVIGATION', () => {
   beforeEach(async () => {
-    await device.reloadReactNative();
+    await elementById(FORUM_BOTTOM_TEST).tap();
   });
 
   it('should have visible FORUM and SEARCH ICON on tab FORUM', async () => {

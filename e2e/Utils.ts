@@ -7,11 +7,13 @@ export default {
   },
   tapBackIos: () => {
     try {
-      return element(by.traits(['button']).and(by.label('Back')))
+      return element(by.traits(['button']).and(by.label('Forum')))
         .atIndex(0)
         .tap();
     } catch (err) {
-      return element(by.type('_UIModernBarButton').and(by.label('Back'))).tap();
+      return element(
+        by.type('_UIModernBarButton').and(by.label('Forum'))
+      ).tap();
     }
   },
   sleep: (ms: number) => new Promise(res => setTimeout(res, ms))
