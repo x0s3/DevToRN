@@ -19,7 +19,7 @@ jobs:
       - name: npm install and lint & jest
         run: |
           npm install
-          npm lint
+          npm run lint
           npm test
         env:
           CI: true
