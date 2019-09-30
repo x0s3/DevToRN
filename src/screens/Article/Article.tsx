@@ -8,7 +8,7 @@ import {
   isFetchingArticle
 } from '@redux/selectors';
 import { shareItem } from '@utils/index';
-import React, { useEffect, useCallback } from 'react';
+import React, { useCallback, useEffect } from 'react';
 import { ScrollView } from 'react-native';
 import { Text } from 'react-native-paper';
 
@@ -45,19 +45,27 @@ function Article({ id, componentId }: ArticleProps) {
     'shareArticle'
   );
 
-  if (error) return <CommonError retryAction={fetchArticleCallback} />;
-
-  if (isFetching || !article)
-    return (
-      <Text style={{ color: '#000' }} testID={'articleFetching'}>
-        Im fetching an article :)
-      </Text>
-    );
-
   return (
-    <ScrollView testID={'articleRootView'}>
-      <Text style={{ color: '#000' }}>Article name {article.title}</Text>
-    </ScrollView>
+    <>
+      {error && (
+        <CommonError
+          testID={'errorArticleTestID'}
+          retryAction={fetchArticleCallback}
+        />
+      )}
+      {(isFetching || !article) && (
+        <Text style={{ color: '#000' }} testID={'articleFetching'}>
+          Im fetching an article :)
+        </Text>
+      )}
+      {article && (
+        <ScrollView testID={'articleRootView'}>
+          <Text testID={'titleID'} style={{ color: '#000' }}>
+            Article name {article.title}
+          </Text>
+        </ScrollView>
+      )}
+    </>
   );
 }
 

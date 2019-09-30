@@ -6,12 +6,13 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 interface CommonErrorProps {
   retryAction?: () => void;
   description?: string;
+  testID?: string;
 }
 
 export const CommonError = React.memo<CommonErrorProps>(
-  ({ retryAction, description }) => (
+  ({ retryAction, description, testID = 'commonErrorView' }) => (
     <View
-      testID={'commonErrorView'}
+      testID={testID}
       style={{ flex: 0.5, alignItems: 'center', justifyContent: 'center' }}
     >
       <Title style={{ color: '#000' }}>Ups seems like we have an error</Title>

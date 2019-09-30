@@ -19,6 +19,7 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest --verbose",
+    "test:cov": "jest --coverage",
     "test:e2e:ios:debug": "detox test --configuration ios.sim.debug -l verbose -o e2e/config-circus.json",
     "test:e2e:android:debug": "detox test --configuration android.emu.debug -l verbose -o e2e/config-circus.json",
     "detox:build:ios": "detox build --configuration ios.sim.debug",
