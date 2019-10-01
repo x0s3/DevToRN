@@ -15,7 +15,7 @@ import {
 } from '../src/redux/selectors';
 import { mockedArticles } from './mockedData';
 
-jest.mock('../secrets', () => ({
+jest.setMock('../secrets', () => ({
   DEV_API_KEY: ''
 }));
 
