@@ -19,7 +19,7 @@ jest.mock('../src/redux/selectors');
 
 describe('CONNECTED COMPONENTS TO REDUX', () => {
   describe('FORUM', () => {
-    it('forum published articles list from selector', () => {
+    it('forum published articles list from redux selector', () => {
       // @ts-ignore
       filterArticlesBySelectedTags.mockReturnValue(mockedArticles);
 
@@ -35,7 +35,7 @@ describe('CONNECTED COMPONENTS TO REDUX', () => {
       ).toBeDefined();
     });
 
-    it('FORUM PUBLISHED ARTICLES LIST FROM REDUX', () => {
+    it('forum published articles list from redux selector', () => {
       // @ts-ignore
       filterArticlesBySelectedTags.mockReturnValue(mockedArticles);
 
