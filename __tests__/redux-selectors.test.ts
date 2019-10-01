@@ -15,6 +15,10 @@ import {
 } from '../src/redux/selectors';
 import { mockedArticles } from './mockedData';
 
+jest.mock('../secrets', () => ({
+  DEV_API_KEY: ''
+}));
+
 describe('REDUX SELECTORS', () => {
   describe('PUBLISHED ARTICLES SELECTORS', () => {
     let store;

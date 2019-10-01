@@ -1,6 +1,6 @@
-import { Article } from '@interfaces/';
-import { RootState } from 'typesafe-actions';
+import { FetchedArticle } from '@interfaces/';
 import { createSelector } from 'reselect';
+import { RootState } from 'typesafe-actions';
 
 export const getPublishedArticles = (state: RootState) =>
   state.publishedArticles.articles;
@@ -28,7 +28,7 @@ export const isFetchingArticle = (state: RootState) =>
   state.publishedArticles.fetchingArticle;
 
 export const getPublishedArticle = (state: RootState) =>
-  state.publishedArticles.fetchedArticle as Article;
+  state.publishedArticles.fetchedArticle as FetchedArticle;
 
 export const hasErrorArticle = (state: RootState) =>
   state.publishedArticles.errorArticle || false;

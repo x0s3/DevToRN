@@ -47,6 +47,7 @@ function Forum({ componentId }: { componentId: string }) {
           }
         },
         bottomTabs: {
+          drawBehind: true,
           visible: false
         }
       },

@@ -19,7 +19,7 @@ export function registerScreens(): void {
   );
   Navigation.registerComponentWithRedux(
     ARTICLE_SCREEN,
-    () => require('../screens/Article/Article').default,
+    () => require('../screens/Article/Article.container').default,
     CustomProvider,
     store
   );

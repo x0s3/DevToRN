@@ -1,4 +1,4 @@
-import { Article } from '@interfaces/*';
+import { Article, FetchedArticle } from '@interfaces/*';
 import { from, of, pipe } from 'rxjs';
 import { catchError, filter, map, switchMap, takeUntil } from 'rxjs/operators';
 import { isActionOf, RootEpic } from 'typesafe-actions';
@@ -39,7 +39,7 @@ const fetchPublishedArticle$: RootEpic = (
   action$.pipe(
     filter(isActionOf(fetchPublishedArticle.request)),
     switchMap(({ payload: id }) =>
-      from(ajax.getJSON<Article>(`${mainURL}/articles/${id}`)).pipe(
+      from(ajax.getJSON<FetchedArticle>(`${mainURL}/articles/${id}`)).pipe(
         map(fetchPublishedArticle.success),
         catchError(
           pipe(

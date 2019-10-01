@@ -5,8 +5,39 @@ import { render, fireEvent } from 'react-native-testing-library';
 import ErrorBoundary from '../src/components/ErrorBoundary';
 import { RootStyleWrapper } from '../src/components/RootStyleWrapper';
 import { Chip, Card, CommonError } from '../src/components';
+import { Article } from '../src/screens/Article/Article.component';
+import { mockedFetchedArticle } from './mockedData';
 
 describe('FC TESTS', () => {
+  describe('ARTICLE', () => {
+    it('should mount correctly article', () => {
+      const { getByTestId } = render(
+        <Article {...mockedFetchedArticle} testID={'testID'} />
+      );
+
+      expect(getByTestId('testID')).not.toBeNull();
+      expect(getByTestId('testID')).toBeDefined();
+
+      expect(getByTestId('coverImageID')).not.toBeNull();
+      expect(getByTestId('coverImageID')).toBeDefined();
+      expect(getByTestId('coverImageID').props.source.uri).toEqual(
+        mockedFetchedArticle.cover_image
+      );
+
+      expect(getByTestId('titleID')).toBeDefined();
+      expect(getByTestId('titleID')).not.toBeNull();
+      expect(getByTestId('titleID').props.children).toEqual(
+        mockedFetchedArticle.title
+      );
+
+      expect(getByTestId('authorNameID')).toBeDefined();
+      expect(getByTestId('authorNameID')).not.toBeNull();
+      expect(getByTestId('authorNameID').props.children).toEqual(
+        mockedFetchedArticle.user.name
+      );
+    });
+  });
+
   describe('CHIP', () => {
     it('should mount and change state correctly', () => {
       const testID = 'testChip';

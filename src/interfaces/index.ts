@@ -1,3 +1,5 @@
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+
 interface Common {
   name: string;
   username: string;
@@ -32,4 +34,12 @@ export interface Article {
   published_timestamp: Date;
   user: User;
   organization?: Organization;
+}
+
+export interface FetchedArticle extends Omit<Article, 'organization'> {
+  readable_publish_date: string;
+  social_image: string;
+  last_comment_at: Date;
+  body_html: string;
+  body_markdown: string;
 }

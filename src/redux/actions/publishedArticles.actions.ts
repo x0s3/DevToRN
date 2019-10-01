@@ -1,4 +1,4 @@
-import { Article } from '@interfaces/';
+import { Article, FetchedArticle } from '@interfaces/';
 import { createAsyncAction, createAction } from 'typesafe-actions';
 
 export const updateTagList = createAction(
@@ -17,4 +17,4 @@ export const fetchPublishedArticle = createAsyncAction(
   'PUBLISHED_ARTICLE_SUCCESS',
   'PUBLISHED_ARTICLE_ERROR',
   'PUBLISHED_ARTICLE_CANCEL'
-)<number, Article, undefined, undefined>();
+)<number, FetchedArticle, undefined, undefined>();

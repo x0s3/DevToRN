@@ -9,8 +9,8 @@ import {
 } from '@redux/selectors';
 import { shareItem } from '@utils/index';
 import React, { useCallback, useEffect } from 'react';
-import { ScrollView } from 'react-native';
 import { Text } from 'react-native-paper';
+import { Article as ArticleView } from './Article.component';
 
 interface ArticleProps {
   id: number;
@@ -58,12 +58,8 @@ function Article({ id, componentId }: ArticleProps) {
           Im fetching an article :)
         </Text>
       )}
-      {article && (
-        <ScrollView testID={'articleRootView'}>
-          <Text testID={'titleID'} style={{ color: '#000' }}>
-            Article name {article.title}
-          </Text>
-        </ScrollView>
+      {article && Object.keys(article).length > 0 && (
+        <ArticleView testID={'articleRootView'} {...article} />
       )}
     </>
   );

@@ -1,4 +1,4 @@
-import { Article } from '@interfaces/';
+import { Article, FetchedArticle } from '@interfaces/';
 import { createReducer, RootAction } from 'typesafe-actions';
 import {
   fetchPublishedArticles,
@@ -8,7 +8,7 @@ import {
 
 interface State {
   articles: Article[];
-  fetchedArticle?: Article;
+  fetchedArticle?: FetchedArticle;
   page: number;
   selected_tags: string[];
   fetchingArticles: boolean;
