@@ -86,11 +86,11 @@ describe('CONNECTED COMPONENTS TO REDUX', () => {
 
     xit('should show scrollview with the article content', () => {
       // @ts-ignore
-      getPublishedArticle.mockReturnValue({});
+      getPublishedArticle.mockReturnValue(mockedFetchedArticle);
       // @ts-ignore
       hasErrorArticle.mockReturnValue(false);
       // @ts-ignore
-      isFetchingArticle.mockReturnValue(true);
+      isFetchingArticle.mockReturnValue(false);
 
       const { debug } = render(
         <Article componentId={'article'} name={'article'} id={1} />

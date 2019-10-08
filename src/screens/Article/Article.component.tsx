@@ -1,8 +1,8 @@
 import { FetchedArticle } from '@interfaces/*';
 import React from 'react';
-import { ImageBackground, ScrollView, StyleSheet } from 'react-native';
+import { ImageBackground, Linking, ScrollView, StyleSheet } from 'react-native';
+import Markdown from 'react-native-markdown-package';
 import { Avatar, Caption, Title } from 'react-native-paper';
-import Markdown from 'react-native-simple-markdown';
 
 export const Article = React.memo<FetchedArticle & { testID: string }>(
   ({ testID, ...article }) => {
@@ -27,7 +27,10 @@ export const Article = React.memo<FetchedArticle & { testID: string }>(
         <Title testID={'titleID'} style={styles.titleLabel}>
           {article.title}
         </Title>
-        <Markdown styles={{ view: { marginHorizontal: 24, marginTop: 10 } }}>
+        <Markdown
+          styles={{ view: { marginHorizontal: 24, marginTop: 10 } }}
+          onLink={(url: string) => Linking.openURL(url)}
+        >
           {article.body_markdown}
         </Markdown>
       </ScrollView>
