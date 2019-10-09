@@ -31,7 +31,7 @@ export function registerScreens(): void {
   );
   Navigation.registerComponentWithRedux(
     OPTIONS_SCREEN,
-    () => require('../App').default,
+    () => require('../screens/Options/Options').default,
     CustomProvider,
     store
   );

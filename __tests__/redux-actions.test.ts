@@ -82,4 +82,14 @@ describe('REDUX ACTIONS', () => {
       ).toEqual(expectedAction);
     });
   });
+
+  describe('OPTIONS ACTIONS', () => {
+    it('should create changeland action correctly', () => {
+      const expectedAction = {
+        type: 'CHANGE_APP_THEME'
+      };
+
+      expect(actions.optionsActions.changeTheme()).toEqual(expectedAction);
+    });
+  });
 });

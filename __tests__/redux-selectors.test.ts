@@ -3,6 +3,7 @@ import {
   fetchPublishedArticles,
   updateTagList
 } from '../src/redux/actions/publishedArticles.actions';
+import { changeTheme } from '../src/redux/actions/options.actions';
 import { configureStore } from '../src/redux/configureStore';
 import {
   filterArticlesBySelectedTags,
@@ -11,7 +12,8 @@ import {
   hasErrorArticle,
   hasErrorArticles,
   isFetchingArticle,
-  isFetchingArticles
+  isFetchingArticles,
+  selectedTheme
 } from '../src/redux/selectors';
 import { mockedArticles } from './mockedData';
 
@@ -87,6 +89,22 @@ describe('REDUX SELECTORS', () => {
         store.dispatch(fetchPublishedArticle.failure());
         expect(hasErrorArticle(store.getState())).toBeTruthy();
       });
+    });
+  });
+
+  describe('OPTIONS SELECTORS', () => {
+    let store;
+    beforeEach(() => {
+      store = configureStore();
+    });
+
+    it('should return selected theme false', () => {
+      expect(selectedTheme(store.getState())).toBeFalsy();
+    });
+
+    it('should return selected theme true', () => {
+      store.dispatch(changeTheme());
+      expect(selectedTheme(store.getState())).toBeTruthy();
     });
   });
 });

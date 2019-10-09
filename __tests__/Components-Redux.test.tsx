@@ -3,16 +3,18 @@ import 'react-native';
 import { render } from 'react-native-testing-library';
 import {
   filterArticlesBySelectedTags,
-  isFetchingArticle,
+  getPublishedArticle,
   hasErrorArticle,
-  getPublishedArticle
+  isFetchingArticle,
+  selectedTheme
 } from '../src/redux/selectors';
-import Forum from '../src/screens/Forum/Forum';
 import Article from '../src/screens/Article/Article.container';
+import Forum from '../src/screens/Forum/Forum';
+import Options from '../src/screens/Options/Options';
 import { mockedArticles, mockedFetchedArticle } from './mockedData';
 
 jest.mock('react-redux', () => ({
-  useSelector: jest.fn().mockReturnValue(() => jest.fn()),
+  useSelector: jest.fn(fn => fn()),
   useDispatch: jest.fn().mockReturnValue(() => jest.fn())
 }));
 jest.mock('../src/redux/selectors');
@@ -84,7 +86,7 @@ describe('CONNECTED COMPONENTS TO REDUX', () => {
       expect(getByText('Im fetching an article :)')).toBeDefined();
     });
 
-    xit('should show scrollview with the article content', () => {
+    it('should show scrollview with the article content', () => {
       // @ts-ignore
       getPublishedArticle.mockReturnValue(mockedFetchedArticle);
       // @ts-ignore
@@ -92,11 +94,32 @@ describe('CONNECTED COMPONENTS TO REDUX', () => {
       // @ts-ignore
       isFetchingArticle.mockReturnValue(false);
 
-      const { debug } = render(
+      const { getAllByTestId } = render(
         <Article componentId={'article'} name={'article'} id={1} />
       );
 
-      debug('componente');
+      expect(getAllByTestId('articleRootView')).toBeDefined();
+    });
+  });
+
+  // TODO fix
+  xdescribe('DARK MODE BUTTON', () => {
+    it('should mount button and be falsy', async () => {
+      // @ts-ignore
+      selectedTheme.mockReturnValue(false);
+
+      const { getByTestId } = render(<Options />);
+
+      expect(getByTestId('changeThemeButtonID').props.value).toBeFalsy();
+    });
+
+    it('should mount button and be truthy', () => {
+      // @ts-ignore
+      selectedTheme.mockReturnValue(true);
+
+      const { getByTestId } = render(<Options />);
+
+      expect(getByTestId('changeThemeButtonID').props.value).toBeTruthy();
     });
   });
 });

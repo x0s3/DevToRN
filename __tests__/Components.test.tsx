@@ -1,10 +1,10 @@
 import React from 'react';
 import 'react-native';
 import { Text } from 'react-native-paper';
-import { render, fireEvent } from 'react-native-testing-library';
+import { fireEvent, render } from 'react-native-testing-library';
+import { Card, Chip, CommonError } from '../src/components';
 import ErrorBoundary from '../src/components/ErrorBoundary';
 import { RootStyleWrapper } from '../src/components/RootStyleWrapper';
-import { Chip, Card, CommonError } from '../src/components';
 import { Article } from '../src/screens/Article/Article.component';
 import { mockedFetchedArticle } from './mockedData';
 
