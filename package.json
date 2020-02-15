@@ -41,7 +41,7 @@
     "reselect": "^4.0.0",
     "rxjs": "^6.5.3",
     "typesafe-actions": "^4.4.2",
-    "yarn": "^1.17.3"
+    "yarn": "^1.22.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
