@@ -30,7 +30,7 @@
   "dependencies": {
     "react": "16.9.0",
     "react-native": "0.61.2",
-    "react-native-fast-image": "^7.0.2",
+    "react-native-fast-image": "^8.3.0",
     "react-native-markdown-package": "^1.5.3",
     "react-native-navigation": "3.2.0",
     "react-native-paper": "^3.0.0-alpha.5",
